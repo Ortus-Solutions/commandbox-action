@@ -1,0 +1,6 @@
+*.swp
+.vscode
+.DS_Store
+
+# Test artifacts
+.tmp

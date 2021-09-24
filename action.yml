@@ -1,0 +1,17 @@
+name: "Box Command"
+description: "Run commands on CommandBox"
+inputs:
+  cmd:
+    description: "Command to pass to Commandbox"
+    required: true
+
+runs:
+  using: "docker"
+  image: docker://ghcr.io/foundeo/cfml-ci-tools/cfml-ci-tools:1.0.4
+  entrypoint: box
+  args:
+    - ${{ inputs.cmd }}
+
+branding:
+  icon: 'box'  
+  color: 'blue'

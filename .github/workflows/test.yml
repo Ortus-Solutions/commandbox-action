@@ -1,0 +1,30 @@
+name: Test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Test Box install
+        uses: ./
+        with:
+          cmd: install
+
+      - name: Test CFFormat Run
+        uses: ./
+        with:
+          cmd: cfformat run tests --overwrite
+
+      - name: Test DocBox Generate
+        uses: ./
+        with:
+          cmd: docbox generate mapping=tests strategy-outputDir=.tmp strategy-projectTitle=tests
+
+      - name: Test CFLint
+        uses: ./
+        with:
+          cmd: cflint pattern=tests/**.cfc exitOnError=true reportLevel=WARNING
