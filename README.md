@@ -14,7 +14,7 @@ This example will run `docbox generate` and place the result in the `docs/` dire
 
 ```yml
 steps:
-- uses: Ortus-Solutions/commandbox-action@v1.0.1
+- uses: Ortus-Solutions/commandbox-action@v1.0.2
   with:
     cmd: docbox generate mapping=cbWire excludes=test|ModuleConfig strategy-outputDir=docs strategy-projectTitle=cbWire
 ```
@@ -25,7 +25,7 @@ This example will install development dependencies listed in the `box.json` pack
 
 ```yml
 steps:
-- uses: Ortus-Solutions/commandbox-action@v1.0.1
+- uses: Ortus-Solutions/commandbox-action@v1.0.2
   with:
     cmd: install
 ```
@@ -36,7 +36,7 @@ This example will run `cflint` against all .cfc files in the `models/` directory
 
 ```yml
 steps:
-- uses: Ortus-Solutions/commandbox-action@v1.0.1
+- uses: Ortus-Solutions/commandbox-action@v1.0.2
   with:
     cmd: cflint pattern=models/**.cfc exitOnError=true reportLevel=WARNING
 ```
@@ -47,7 +47,7 @@ This example will run `cfformat` on the `models`, `interceptors`, and `handlers`
 
 ```yml
 steps:
-- uses: Ortus-Solutions/commandbox-action@v1.0.1
+- uses: Ortus-Solutions/commandbox-action@v1.0.2
   with:
     cmd: cfformat run models,handlers,interceptors,tests/specs --overwrite
 ```
